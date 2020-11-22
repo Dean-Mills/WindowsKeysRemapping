@@ -14,9 +14,24 @@
 ;     Esc                   - R
 ;     Next, previous tab    - Tab, Q
 ;     Undo, redo            - , and .
+;     shift, ctrl           - x and c
 ; - Numpad at the right hand resting position when holding Ctrl+Shift+Alt (using keys m,.jkluio and spacebar)
 ;  
 ; To use capslock as you normally would, you can press WinKey + Capslock
+
+full_command_line := DllCall("GetCommandLine", "str")
+
+if not (A_IsAdmin or RegExMatch(full_command_line, " /restart(?!\S)"))
+{
+    try
+    {
+        if A_IsCompiled
+            Run *RunAs "%A_ScriptFullPath%" /restart
+        else
+            Run *RunAs "%A_AhkPath%" /restart "%A_ScriptFullPath%"
+    }
+    ExitApp
+}
 
 #Persistent
 SetCapsLockState, AlwaysOff
@@ -35,6 +50,12 @@ Capslock & i up::Send {Blind}{Up Up}
 Capslock & l::Send {Blind}{Right DownTemp}
 Capslock & l up::Send {Blind}{Right Up}
 
+; Capslock + xc (lshift, ctrl)
+Capslock & x::SendInput {Blind}{Shift Down}
+Capslock & x up::SendInput {Blind}{Shift Up}
+
+Capslock & c::SendInput {Blind}{Ctrl Down}
+Capslock & c up::SendInput {Blind}{Ctrl Up}
 
 ; Capslock + uohy (pgdown, pgup, home, end)
 

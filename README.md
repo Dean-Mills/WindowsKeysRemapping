@@ -51,6 +51,8 @@ The setup is as follows
 
   Undo, redo - , and .
 
+  shift, ctrl - x and c
+
 - Numpad at the right hand resting position when holding Ctrl+Shift+Alt (using keys m,.jkluio and spacebar)
 
 To use capslock as you normally would, you can press WinKey + Capslock
