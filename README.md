@@ -1,4 +1,16 @@
-Use this to change your life
+## Update
+
+A better solution since I already use Windows Power Toys
+
+1)Download Sharpkeys https://github.com/randyrants/sharpkeys
+
+2)Remap capslock to right ctrl -- restart PC for this to apply
+
+3)Install Windows Power Toys
+
+4)Make sure you update the settings. You need to run as administrator you can also set to run at startup
+
+5)Remap keys keys to whatever you want (eg right ctrl + j => left arrow)
 
 ## Installation
 
